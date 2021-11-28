@@ -29,7 +29,22 @@ include "logic.php";
                 post has been added
 
             </div>
-         <?php   }?> 
+         <?php   } else if($_GET['info'] == 'updated'){?>
+
+             <div class="alert alert-success" role="alert">
+                post has been added
+
+            </div>
+            <?php   } else if($_GET['info'] == 'delete'){?>
+
+<div class="alert alert-danger" role="alert">
+   post has been deleted successfully
+</div>
+
+<?php   }?>
+
+       
+        
         <?php   }?> 
         
       
@@ -46,7 +61,7 @@ include "logic.php";
               <div class="card-body" style="width:18rem;">
                 <h5 class="card-title"><?php echo $q['title']; ?></h5>
                 <p class="card-body"><?php echo $q['content'];?> </p>
-                <a href="" class="btn btn-light">read more </a>
+                <a href="view.php?id=<?php echo $q['id']?>" class="btn btn-light">read more <span class="text-danger">&rarr;</span></a>
 
               </div>
 
